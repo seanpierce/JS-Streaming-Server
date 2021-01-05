@@ -12,7 +12,7 @@ const config = {
         },
         http: {
             port: 8888,
-            mediaroot: './server/media',
+            mediaroot: './rtmp/server/media',
             allow_origin: '*'
         },
         trans: {
@@ -28,6 +28,6 @@ const config = {
             ]
         }
     }
-};
+}
  
 module.exports = config;
