@@ -12,8 +12,6 @@ import videojs from 'video.js'
 export default {
     data() {
         return {
-            stream: false,
-            videoJsOptions: null,
             player: null
         }
     },
@@ -21,20 +19,19 @@ export default {
     methods: {
 
         setPlayer() {
-            this.stream = true
-
-            this.videoJsOptions = {
+                let options = {
                 autoplay: false,
                 controls: true,
                 sources: [{
-                    src: "http://localhost:8888/live/1234/index.m3u8",
+                    src: "http://localhost:8888/live/stream/index.m3u8",
                     type: "application/x-mpegURL"
                 }],
-                fluid: true
+                fluid: true,
+                poster: require('@/assets/images/thumbnail.png')
             }
 
-            this.player = videojs(this.$refs.videoPlayer, this.videoJsOptions, function onPlayerReady() {
-                console.log('onPlayerReady', this);
+            this.player = videojs(this.$refs.videoPlayer, options, function onPlayerReady() {
+                console.log('onPlayerReady', this)
             })
         }
     },
