@@ -11,11 +11,11 @@ const config = {
         },
         http: {
             port: 8888,
-            mediaroot: '/home/seanpierce/www/stream/rtmp/server/media',
+            mediaroot: './rtmp/server/media',
             allow_origin: '*'
         },
         trans: {
-            ffmpeg: '/usr/bin/ffmpeg',
+            ffmpeg: '/usr/local/bin/ffmpeg',
             tasks: [
                 {
                     app: 'live',
