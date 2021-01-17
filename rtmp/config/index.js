@@ -11,11 +11,11 @@ const config = {
         },
         http: {
             port: 8888,
-            mediaroot: './rtmp/server/media',
+            mediaroot: '/home/seanpierce/www/stream/rtmp/server/media',
             allow_origin: '*'
         },
         trans: {
-            ffmpeg: '/usr/local/bin/ffmpeg',
+            ffmpeg: '/usr/bin/ffmpeg',
             tasks: [
                 {
                     app: 'live',
@@ -25,12 +25,8 @@ const config = {
                     dashFlags: '[f=dash:window_size=3:extra_window_size=5]'
                 }
             ]
-        },
-        auth: {
-            publish: true,
-            secret: creds.key
-        },
-    }
+        }
+    },
 }
  
 module.exports = config;
