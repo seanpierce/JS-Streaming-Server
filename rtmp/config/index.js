@@ -1,7 +1,6 @@
+const creds = require('./creds')
+
 const config = {
-    server: {
-        secret: 'kjVkuti2xAyF3JGCzSZTk0YWM5JhI9mgQW4rytXc'
-    },
     rtmp_server: {
         rtmp: {
             port: 1935,
@@ -26,7 +25,11 @@ const config = {
                     dashFlags: '[f=dash:window_size=3:extra_window_size=5]'
                 }
             ]
-        }
+        },
+        auth: {
+            publish: true,
+            secret: creds.key
+        },
     }
 }
  
