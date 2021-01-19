@@ -1,4 +1,12 @@
-const creds = require('./creds')
+const scripts = require('../scripts')
+
+let env = scripts.getArg('--env')
+let prod = env.toLowerCase() === 'prod'
+
+scripts.configLog(prod)
+
+let password = scripts.setPassword(prod, scripts.getArg('--p'))
+
 
 const config = {
     rtmp_server: {
@@ -11,11 +19,13 @@ const config = {
         },
         http: {
             port: 8888,
-            mediaroot: './rtmp/server/media',
+            // if prod, link to absolute path on server
+            mediaroot: prod ? '/home/seanpierce/www/stream/rtmp/server/media' : './rtmp/server/media',
             allow_origin: '*'
         },
         trans: {
-            ffmpeg: '/usr/local/bin/ffmpeg',
+            // if prod, link to server installation of ffmpeg
+            ffmpeg: prod ? '/usr/bin/ffmpeg' : '/usr/local/bin/ffmpeg',
             tasks: [
                 {
                     app: 'live',
@@ -27,6 +37,9 @@ const config = {
             ]
         }
     },
+    password: password ? password : 'hackme'
 }
+
+
  
 module.exports = config;

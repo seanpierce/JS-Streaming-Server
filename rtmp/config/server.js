@@ -1,6 +1,5 @@
 const NodeMediaServer = require('node-media-server')
 const config = require('.').rtmp_server
-const creds = require('./creds')
  
 server = new NodeMediaServer(config)
  
