@@ -34,7 +34,7 @@ exports.setPassword = (prod, password) => {
         return 'hackme'
     } else {
         let message = `
-            \nSetting to value: ${password}
+            \nSetting password to value: ${password}
             \n***********************************************
         `
         console.log(message)
