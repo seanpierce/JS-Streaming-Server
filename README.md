@@ -31,7 +31,7 @@ Configuration values can be set in the `rtmp/config/index.js` file. The current 
 
 For production, ensure that ports **1935** and **8888** are open and accessible if you are using a firewall. If other ports are specified or changed in the `rtmp/config/index.js` file, then ensure that those ports are allowed as well.
 
-Using **Nginx**, the server and client can be configured in a way to easily allow SSL using a proxy. One the config Nginx config is set up, use certbot to generate an SSL cert, and select the option to 'redirect'.
+Using **Nginx**, the server and client can be configured in a way to easily allow SSL using a proxy. Once the Nginx config is set up, use certbot to generate an SSL certificate, and when prompted, select the option to 'redirect all traffic to https'.
 
 ```linux
 server {
