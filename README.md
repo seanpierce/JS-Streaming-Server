@@ -25,6 +25,8 @@ With the dependencies and the project installed, navigate to the root of this pr
 * `--env` specifies the environment. When set to "prod", this flag will alter configuration values in the `rtmp/config/index.js` file. The default value is "test".
 * `--p` specifies the stream password. If no password is specified then the default value 'hackme' is used. Note that when running in production, it is required that a password is set.
 
+Example: `node ./rtmp --env prod -p p@55w0rd`. This example runs the rtmp module specifying the environment as 'prod' and the password as 'p@55w0rd'
+
 ## Configuration
 
 Configuration values can be set in the `rtmp/config/index.js` file. The current project expects a local environment to be MacOS and a produciton environment to be Ubuntu 18. Dependency instal locations or media root locations may differ between environments. Ensure that these values are accurate to your environments.
