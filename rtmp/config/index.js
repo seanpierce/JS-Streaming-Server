@@ -1,12 +1,11 @@
 const scripts = require('../scripts')
 
 let env = scripts.getArg('--env')
-let prod = env.toLowerCase() === 'prod'
+let prod = env ? env.toLowerCase() === 'prod' : false
 
 scripts.configLog(prod)
 
 let password = scripts.setPassword(prod, scripts.getArg('--p'))
-
 
 const config = {
     rtmp_server: {
